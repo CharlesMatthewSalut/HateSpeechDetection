@@ -100,7 +100,7 @@ if text_input:
 
 st.markdown("---")
 
-st.markdown("<h1 class='centered-title'>Twitter Data Word Cloud</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='centered-title'>Data Word Cloud</h1>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center; margin-top: 10px; margin-bottom:10px;'>See the visualized frequency of words used in the dataset.</h5>",unsafe_allow_html=True)
 
 

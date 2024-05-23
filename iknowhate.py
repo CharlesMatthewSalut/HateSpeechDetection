@@ -1,5 +1,3 @@
-# iknowhate.py
-
 import streamlit as st
 import matplotlib.pyplot as plt
 import pickle 
@@ -35,7 +33,6 @@ def toxicity_prediction(text):
 
 st.markdown("<h1 class='centered-title'>Negativity Detection App</h1>", unsafe_allow_html=True)
 
-
 st.markdown("""
     <style>
     .centered {
@@ -59,10 +56,9 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-
-st.markdown("<h5 style='text-align: center; margin-top: 10px;'>The aim of this tool is to detect harmful passages from any text.</h5>",unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center; margin-top: 10px;'>Upload your text and click 'Detect' to get started.</h5>",unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center; margin-top: 10px;'>Input any type of text in the text area to detect if it is toxic or not.</h5>",unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center; margin-top: 10px;'>The aim of this tool is to detect harmful passages from any text.</h5>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center; margin-top: 10px;'>Upload your text and click 'Detect' to get started.</h5>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center; margin-top: 10px;'>Input any type of text in the text area to detect if it is toxic or not.</h5>", unsafe_allow_html=True)
 
 st.markdown("""
     <style>
@@ -74,14 +70,12 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+st.markdown("<h1 style='text-align: center; margin-top: 30px;'>Welcome</h1>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center; margin-top: 10px;'>The aim of this tool is to detect harmful passages from any text.</h5>", unsafe_allow_html=True)
+st.markdown("<h5 style='text-align: center;'>Upload your text and click 'Detect' to get started.</h5>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; margin-top: 50px'>Remember to always be careful with your words because you'll never know it will affect someone.</h4>", unsafe_allow_html=True)
 
-st.markdown("<h1 style='text-align: center; margin-top: 30px;'>Welcome</h1>",unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center; margin-top: 10px;'>The aim of this tool is to detect harmful passages from any text.</h4>",unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center;'>Upload your text and click 'Detect' to get started.</h4>",unsafe_allow_html=True)
-st.markdown("<h4 style='text-align: center; margin-top: 50px'>Remember to always be careful with your words because you'll never know it will affect someone.</h4>",unsafe_allow_html=True)
-
-
-text_input = st.text_area("Enter your text")  # Changed from st.text_input to st.text_area
+text_input = st.text_area("Enter your text")
 
 if text_input:
     if st.button("Detect"):
@@ -91,27 +85,24 @@ if text_input:
             st.error("The result is Toxic.")
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:
-                st.image("toxic.gif", caption="YOU ARE BANNED!", width=300)
+                st.image("toxic.gif", caption="YOU ARE BANNED!", use_column_width=True)
         else:
             st.success("The result is Non-Toxic.")
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:
-                st.image("HAPPY.gif", caption="YOU'RE AN ANGEL", width=300)
-
-st.markdown("---")
+                st.image("happy.gif", caption="YOU'RE AN ANGEL", use_column_width=True)
 
 st.markdown("<h1 class='centered-title'>Data Word Cloud</h1>", unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center; margin-top: 10px; margin-bottom:10px;'>See the visualized frequency of words used in the dataset.</h5>",unsafe_allow_html=True)
-
+st.markdown("<h5 style='text-align: center; margin-top: 10px; margin-bottom:10px;'>See the visualized frequency of words used in the dataset.</h5>", unsafe_allow_html=True)
 
 st.markdown("<div class='centered-button'>", unsafe_allow_html=True)
 if st.button("Generate Word Cloud", key="generate_button"):
     try:
-        wordcloud = generate_wordcloud_from_csv('FinalBalancedDataset.csv')  # Call the function to generate the word cloud
+        wordcloud = generate_wordcloud_from_csv('FinalBalancedDataset.csv')
         plt.figure(figsize=(10, 5))
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis('off')
-        st.pyplot(plt)  # Display the word cloud using Streamlit's pyplot
+        st.pyplot(plt)
     except Exception as e:
         st.error(f"Error generating word cloud: {e}")
 st.markdown("</div>", unsafe_allow_html=True)

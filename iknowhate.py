@@ -31,7 +31,7 @@ def toxicity_prediction(text):
     class_name = "Toxic" if prediction == 1 else "Non-Toxic"
     return class_name
 
-st.markdown("<h1 class='centered-title'>Negativity Detection App</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='centered-title'>Anti-Venom</h1>", unsafe_allow_html=True)
 
 st.markdown("""
     <style>
@@ -55,7 +55,7 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-
+st.markdown("<h5 style='text-align: center; margin-top: 10px;'>Negativity Detection App</h5>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center; margin-top: 10px;'>The aim of this tool is to detect harmful passages from any text.</h5>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center; margin-top: 10px;'>Upload your text and click 'Detect' to get started.</h5>", unsafe_allow_html=True)
 st.markdown("<h5 style='text-align: center; margin-top: 10px;'>Input any type of text in the text area to detect if it is toxic or not.</h5>", unsafe_allow_html=True)
@@ -70,9 +70,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.markdown("<h1 style='text-align: center; margin-top: 30px;'>Welcome</h1>", unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center; margin-top: 10px;'>The aim of this tool is to detect harmful passages from any text.</h5>", unsafe_allow_html=True)
-st.markdown("<h5 style='text-align: center;'>Upload your text and click 'Detect' to get started.</h5>", unsafe_allow_html=True)
 st.markdown("<h4 style='text-align: center; margin-top: 50px'>Remember to always be careful with your words because you'll never know it will affect someone.</h4>", unsafe_allow_html=True)
 
 text_input = st.text_area("Enter your text")
